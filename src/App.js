@@ -1,11 +1,15 @@
 import React from 'react';
 
 function App() {
+    const arr = [1, 2, 3, 4, 5];
+
     return (
-        <div>
-            <h1 className="text-3xl font-bold underline">Text 1</h1>
-            <h2>Text 2</h2>
-        </div>
+        <>
+            <ul>
+                {arr.map((item) => <li>List: {item}</li>)}
+            </ul>
+
+        </>
     );
 }
 
