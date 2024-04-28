@@ -1,32 +1,12 @@
 import React from 'react';
 
 function App() {
-    const table = (
-        <>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Walle</td>
-                <td>1 year</td>
-            </tr>
-            <tr>
-                <td>Anastasia</td>
-                <td>31 years</td>
-            </tr>
-            </tbody>
-        </>);
+    const isAdult = true;
+    const link = 'https://anastasia.grinkevi.ch/';
 
     return (
         <>
-            <table>
-                {table}
-            </table>
-
+            {isAdult && <a href={link}>Link</a>}
         </>
     );
 }
