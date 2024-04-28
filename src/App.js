@@ -1,14 +1,31 @@
 import React from 'react';
 
 function App() {
-    const arr = [1, 2, 3, 4, 5];
-    const list = <>{arr.map((item) => <li>List: {item}</li>)}</>
+    const table = (
+        <>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Walle</td>
+                <td>1 year</td>
+            </tr>
+            <tr>
+                <td>Anastasia</td>
+                <td>31 years</td>
+            </tr>
+            </tbody>
+        </>);
 
     return (
         <>
-            <ul>
-                {list}
-            </ul>
+            <table>
+                {table}
+            </table>
 
         </>
     );
