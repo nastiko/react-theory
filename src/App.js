@@ -6,7 +6,7 @@ function App() {
 
     return (
         <>
-            {isAdult && <a href={link}>Link</a>}
+            {!isAdult && <a href={link}>Link</a>}
         </>
     );
 }
