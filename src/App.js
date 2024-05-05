@@ -2,13 +2,13 @@ import React from 'react';
 
 function App() {
 
-    function handleClick() {
-        alert('Hello World!');
+    function nameUser(name) {
+        alert('Hello, ' + name);
     }
 
     return (
         <>
-            <button onClick={handleClick}>Click me!</button>
+            <button onClick={() => nameUser('Anastasia')}>Click me!</button>
         </>
     );
 }
