@@ -1,12 +1,14 @@
 import React from 'react';
 
 function App() {
-    const isAdult = true;
-    const link = 'https://anastasia.grinkevi.ch/';
+
+    function handleClick() {
+        alert('Hello World!');
+    }
 
     return (
         <>
-            {!isAdult && <a href={link}>Link</a>}
+            <button onClick={handleClick}>Click me!</button>
         </>
     );
 }
