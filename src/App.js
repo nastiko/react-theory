@@ -1,36 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function App() {
-    const users = [
-        {id: 1, name: 'user1', surname: 'surn1', age: 30},
-        {id: 2, name: 'user2', surname: 'surn2', age: 31},
-        {id: 3, name: 'user3', surname: 'surn3', age: 32},
-    ];
+    const [name, setName] = useState('Anastasyia');
+    const [surname, setSurname] = useState('Hrynkevich');
 
-    const result = users.map((user) => {
-        return <tr key={user.id}>
-            <td>{user.name}</td>
-            <td>{user.surname}</td>
-            <td>{user.age}</td>
-        </tr>
-    })
+    function changeName() {
+        setName('Anastasia changed name');
+    }
 
-
+    function changeSurname() {
+        setSurname('Hrynkevich is the right name')
+    }
 
     return (
         <>
-            <table>
-                <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Surname</td>
-                    <td>Age</td>
-                </tr>
-                </thead>
-                <tbody>
-                {result}
-                </tbody>
-            </table>
+            <div>
+                <p>{name}</p>
+                <button onClick={changeName}>Change name</button>
+            </div>
+            <div>
+                <p>{surname}</p>
+                <button onClick={changeSurname}>Change surname</button>
+            </div>
         </>
     );
 }
