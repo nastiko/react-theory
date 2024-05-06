@@ -1,27 +1,17 @@
 import React, {useState} from 'react';
 
 function App() {
-    const [name, setName] = useState('Anastasyia');
-    const [surname, setSurname] = useState('Hrynkevich');
+    const [inCart, setInCart] = useState(false);
 
-    function changeName() {
-        setName('Anastasia changed name');
+    function incrementCart() {
+        setInCart(!inCart);
     }
 
-    function changeSurname() {
-        setSurname('Hrynkevich is the right name')
-    }
 
     return (
         <>
-            <div>
-                <p>{name}</p>
-                <button onClick={changeName}>Change name</button>
-            </div>
-            <div>
-                <p>{surname}</p>
-                <button onClick={changeSurname}>Change surname</button>
-            </div>
+          <p>{inCart ? 'item in the cart' : 'item is not the cart'}</p>
+          <button onClick={incrementCart}>Add item</button>
         </>
     );
 }
