@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
 
 function App() {
-    const [characterCount, setCharacterCount] = useState(0);
+    const [year, setBornYear] = useState('');
 
-    function handleChange(event) {
-        setCharacterCount(event.target.value.length);
+    function handleChange (event) {
+        const today = new Date();
+
+        setBornYear((today.getFullYear() - event.target.value).toString());
     }
 
     return (
         <>
-            <input type="text" onChange={handleChange}/>
-            <p>Total Number of characters: {characterCount}</p>
+            <input className="border-[1px] border-[#000000]" type="number" onChange={handleChange}/>
+            <p>When user was born: {year}</p>
         </>
     );
 }
