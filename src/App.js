@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 
 function App() {
-    const [value, setValue] = useState('');
+    const [characterCount, setCharacterCount] = useState(0);
 
     function handleChange(event) {
-        setValue(event.target.value);
+        setCharacterCount(event.target.value.length);
     }
 
     return (
         <>
-            <input value={value} onChange={handleChange}/>
-            <p>text: {value}</p>
+            <input type="text" onChange={handleChange}/>
+            <p>Total Number of characters: {characterCount}</p>
         </>
     );
 }
