@@ -1,17 +1,24 @@
 import React, {useState} from 'react';
 
 function App() {
-    const [inCart, setInCart] = useState(false);
+    const [count, setCount] = useState(1);
 
-    function incrementCart() {
-        setInCart(!inCart);
+    function increaseNumber() {
+        setCount(count + 1);
+    }
+
+    function decreaseNumber() {
+        setCount(count - 1);
     }
 
 
     return (
         <>
-          <p>{inCart ? 'item in the cart' : 'item is not the cart'}</p>
-          <button onClick={incrementCart}>Add item</button>
+            <p>{count}</p>
+            <div className="flex gap-4 py-5 px-5">
+                <button className="px-5 py-2 border-[1px] border-[#000000]" onClick={increaseNumber}>Increase</button>
+                <button className="px-5 py-2 border-[1px] border-[#000000]" onClick={decreaseNumber}>Decrease</button>
+            </div>
         </>
     );
 }
