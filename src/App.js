@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
 function App() {
-    const fruit = ['Apple', 'Banana', 'Orange'];
+    const fruit = ['Choose a fruit', 'Apple', 'Banana', 'Orange'];
     const [value, setValue] = useState('');
 
     const options = fruit.map((option, index) => {
-        return <option key={index}>{option}</option>
+        return <option key={index} value={index}>{option}</option>
     });
 
     function handleChange(event) {
@@ -15,11 +15,9 @@ function App() {
     return (
         <>
             <div className="flex flex-col justify-center items-center gap-2 my-10">
-                <lavel>Choose a fruit:
-                    <select value={value} onChange={handleChange}>
-                        {options}
-                    </select>
-                </lavel>
+                <select value={value} onChange={handleChange}>
+                    {options}
+                </select>
                 <p>User has chosen: {value}</p>
             </div>
         </>
