@@ -1,27 +1,47 @@
 import React, {useState} from 'react';
 
 function App() {
-    const fruit = ['Choose a fruit', 'Apple', 'Banana', 'Orange'];
-    const [value, setValue] = useState('');
-
-    const options = fruit.map((option, index) => {
-        return <option key={index} value={index}>{option}</option>
-    });
+    const [currentRadioValue, setCurrentRadioValue] = useState("HTML");
 
     function handleChange(event) {
-        setValue(event.target.value)
+        setCurrentRadioValue(event.target.value);
     }
 
     return (
         <>
-            <div className="flex flex-col justify-center items-center gap-2 my-10">
-                <select value={value} onChange={handleChange}>
-                    {options}
-                </select>
-                <p>User has chosen: {value}</p>
+            <div className="flex flex-col items-center justify-center my-10">
+                <p>What do you know?</p>
+                <div>
+                    <input
+                        onChange={handleChange}
+                        value="HTML"
+                        checked={currentRadioValue === "HTML"}
+                        type="radio"
+                        name="radio"/>
+                    <span className="ml-2">HTML</span>
+                </div>
+                <div>
+                    <input
+                        onChange={handleChange}
+                        value="CSS"
+                        checked={currentRadioValue === "CSS"}
+                        type="radio"
+                        name="radio"/>
+                    <span className="ml-2">CSS</span>
+                </div>
+                <div>
+                    <input
+                        onChange={handleChange}
+                        value="JS - Well done!"
+                        checked={currentRadioValue === "JS - Well done!"}
+                        type="radio"
+                        name="radio"/>
+                    <span className="ml-2">JS</span>
+                </div>
+                <p>I know {currentRadioValue}</p>
             </div>
         </>
-    );
+    )
 }
 
 export default App;
